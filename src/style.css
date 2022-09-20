@@ -147,7 +147,7 @@ a {
   border: 3px solid rgba(136, 159, 230);
 }
 
-.actualCity {
+.actual-city {
   font-size: 58px;
   font-weight: 700;
   margin-top: 5px;
@@ -166,7 +166,7 @@ a {
   background-color: rgb(251, 251, 252, 0.3);
 }
 
-.cloudiness {
+.description {
 font-size: 24px;
 font-weight: 700; 
 }
@@ -179,8 +179,12 @@ font-weight: 700;
 }
 
 .actual-temperature {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
+}
+
+ul {
+  list-style: none;
 }
 
 .container .text-center {
@@ -225,5 +229,4 @@ font-weight: 700;
   font-size: 12px;
   text-align: center;
   margin-top: 10px;
-
 }
