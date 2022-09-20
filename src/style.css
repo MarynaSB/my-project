@@ -219,3 +219,11 @@ font-weight: 700;
     font-size: 28px;
     font-weight: 600;
 }
+
+.coder-link {
+  font-family: "Martel", serif;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+
+}
