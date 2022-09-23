@@ -146,13 +146,13 @@ a {
   border: 3px solid rgba(136, 159, 230);
 }
 
-.actual-city {
+#actual-city {
   font-size: 58px;
   font-weight: 700;
   margin-top: 5px;
 }
 
-.actual-date-time {
+#actual-date-time {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
