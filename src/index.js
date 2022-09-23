@@ -35,18 +35,31 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherCondition(response) {
-  let tempMax = Math.round(response.data.main.temp_max);
-  if (tempMax > 0) tempMax = `+${tempMax}°C`;
-  else tempMax = `${tempMax}°C`;
-  let tempMin = Math.round(response.data.main.temp_min);
-  if (tempMin > 0) tempMin = `+${tempMin}°C`;
-  else tempMin = `${tempMin}°C`;
+  currentApiResponse = response;
+  let tempMax;
+  let tempMin;
+  if (!isFahrenheit) {
+    tempMax = Math.round(response.data.main.temp_max);
+    if (tempMax > 0) tempMax = `+${tempMax}°C`;
+    else tempMax = `${tempMax}°C`;
+    tempMin = Math.round(response.data.main.temp_min);
+    if (tempMin > 0) tempMin = `+${tempMin}°C`;
+    else tempMin = `${tempMin}°C`;
+  } else {
+    tempMax = Math.round(getFahrenheitTemperature(response.data.main.temp_max));
+    if (tempMax > 0) tempMax = `+${tempMax}°F`;
+    else tempMax = `${tempMax}°F`;
+    tempMin = Math.round(getFahrenheitTemperature(response.data.main.temp_min));
+    if (tempMin > 0) tempMin = `+${tempMin}°F`;
+    else tempMin = `${tempMin}°F`;
+  }
+
   let iconElement = document.querySelector("#weather-icon");
   document.querySelector("#actual-city").innerHTML = response.data.name;
   document.querySelector(
-    ".actual-temperature"
+    "#actual-temperature"
   ).innerHTML = `${tempMax}${"\u00A0"}${"\u00A0"}${tempMin}`;
-  document.querySelector(".description").innerHTML =
+  document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -74,7 +87,6 @@ function handleSubmit(event) {
 function searchLocation(position) {
   let apiKey = "ac209dae1f283fb332a5bb7f50b0f468";
   let units = "metric";
-  // if (isFahrenheit) units = "imperial";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -91,10 +103,26 @@ function linkClick(event, city) {
   searchCity(currentCity);
 }
 
+let isFahrenheit = false;
+let currentApiResponse;
+
+function convert(event) {
+  event.preventDefault();
+  isFahrenheit = !isFahrenheit;
+  displayWeatherCondition(currentApiResponse);
+}
+
+function getFahrenheitTemperature (celsiusTemperature) {
+  return (celsiusTemperature * 9) / 5 + 32;
+}
+
 let searchCityForm = document.querySelector("#search-city");
 searchCityForm.addEventListener("submit", handleSubmit);
 
-let currentButton = document.querySelector(".current-location");
+let currentButton = document.querySelector("#current-location");
 currentButton.addEventListener("click", getCurrentPosition);
+
+let unitsButton = document.querySelector("#degrees");
+unitsButton.addEventListener("click", convert);
 
 searchCity("Barcelona");

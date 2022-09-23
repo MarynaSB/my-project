@@ -95,7 +95,7 @@ a {
   margin-bottom: 10px;
 }
 
-.search {
+#search {
   font-size: 28px;
   border: 3px solid rgb(34, 34, 179);
   border-radius: 10px;
@@ -106,12 +106,12 @@ a {
   transition: all 200ms ease-in-out;
 }
 
-.search:hover {
+#search:hover {
   background-color: rgb(27, 27, 145);
   border: 3px solid rgb(27, 27, 145);
 }
 
-.degrees {
+#degrees {
   display: inline;
   font-size: 28px;
   border: 3px solid rgb(73, 181, 243);
@@ -123,12 +123,12 @@ a {
   transition: all 200ms ease-in-out;
 }
 
-.degrees:hover {
+#degrees:hover {
   background-color: rgb(58, 145, 196);
   border: 3px solid rgb(58, 145, 196);
 }
 
-.current-location {
+#current-location {
   display: inline;
   font-size: 28px;
   font-weight: 700;
@@ -141,7 +141,7 @@ a {
   margin-bottom: 10px;
   transition: all 200ms ease-in-out;
 }
-.current-location:hover {
+#current-location:hover {
   background-color: rgba(255, 255, 255, 0.575);
   border: 3px solid rgba(136, 159, 230);
 }
@@ -165,7 +165,7 @@ a {
   background-color: rgb(251, 251, 252, 0.3);
 }
 
-.description {
+#description {
 font-size: 24px;
 font-weight: 700; 
 }
@@ -177,7 +177,7 @@ font-weight: 700;
   font-weight: 600;
 }
 
-.actual-temperature {
+#actual-temperature {
   font-size: 40px;
   font-weight: 700;
 }
