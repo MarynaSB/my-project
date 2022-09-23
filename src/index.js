@@ -41,6 +41,7 @@ function displayWeatherCondition(response) {
   let tempMin = Math.round(response.data.main.temp_min);
   if (tempMin > 0) tempMin = `+${tempMin}°C`;
   else tempMin = `${tempMin}°C`;
+  let iconElement = document.querySelector("#weather-icon");
   document.querySelector("#actual-city").innerHTML = response.data.name;
   document.querySelector(
     ".actual-temperature"
@@ -53,6 +54,8 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#actual-date-time").innerHTML = formatDate(
     response.data.dt * 1000);
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
   }
 
 function searchCity(city) {
