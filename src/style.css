@@ -12,6 +12,10 @@ a {
     text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .video-container {
   height: 100%;
   width: 100%;
@@ -141,6 +145,7 @@ a {
   margin-bottom: 10px;
   transition: all 200ms ease-in-out;
 }
+
 #current-location:hover {
   background-color: rgba(255, 255, 255, 0.575);
   border: 3px solid rgba(136, 159, 230);
@@ -156,6 +161,7 @@ a {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 #weather-icon {
@@ -182,8 +188,14 @@ font-weight: 700;
   font-weight: 700;
 }
 
-ul {
-  list-style: none;
+#weather-forecast {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#weather-forecast ul {
+  padding: 0px;
+  text-align: center;
 }
 
 .container .text-center {
@@ -196,11 +208,6 @@ ul {
   font-weight: 900;
   font-size: 24px;
   margin-top: 10px;
-}
-
-.card-text {
-  font-size: 16px;
-  font-weight: 700;
 }
 
 .card {
@@ -218,7 +225,7 @@ ul {
   padding-right: 5px;
 }
 
-.temperature {
+.forecast-temperature {
     font-size: 28px;
     font-weight: 600;
 }

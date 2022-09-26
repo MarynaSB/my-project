@@ -24,7 +24,7 @@
   <body>
     <div class="container">
       <div class="video-container">
-        <video autoplay loop muted controls poster="images/clouds.jpg">
+        <video poster="images/clouds.jpg" autoplay loop muted>
           <source src="video/clouds.mp4" type="video/mp4" />
         </video>
         <div class="caption">
@@ -90,21 +90,25 @@
               </div>
             </div>
           </div>
+          <div id="weather-forecast">
           <div class="row row-cols-1 row-cols-md-5 g-1">
             <div class="col">
               <div class="card">
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title">Sunday</h5>
-                    <p class="card-text">
-                      <span class="temperature"> +30°C +26°C </span>
-                      <br />
-                      Precipitation: 0%
-                      <br />
-                      Humidity: 65%
-                      <br />
-                      Wind: 4 m/sec
-                    </p>
+                    <div class="forecast-temperature"><span class="forecast-temperature-max">+30</span>°C <span class="forecast-temperature-min">+26</span>°C</div>
+                      <ul>
+                        <li>
+                          Precipitation: <span class = "forecast-precipitation"></span>%
+                        </li>
+                        <li>
+                          Humidity:<span class = "forecast-humidity"></span>%
+                        </li>
+                        <li>
+                          Wind:<span class = "forecast-wind"></span> m/sec
+                        </li>
+                      </ul> 
                     <img
                       src="images/02d.png"
                       class="card-img-bottom"
@@ -119,15 +123,18 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title">Monday</h5>
-                    <p class="card-text">
-                      <span class="temperature">+30°C +27°C</span>
-                      <br />
-                      Precipitation: 0%
-                      <br />
-                      Humidity: 68%
-                      <br />
-                      Wind: 4 m/sec
-                    </p>
+                    <div class="forecast-temperature"><span class="forecast-temperature-max">+30</span>°C <span class="forecast-temperature-min">+26</span>°C</div>
+                      <ul>
+                        <li>
+                          Precipitation: <span class = "forecast-precipitation"></span>%
+                        </li>
+                        <li>
+                          Humidity:<span class = "forecast-humidity"></span>%
+                        </li>
+                        <li>
+                          Wind:<span class = "forecast-wind"></span> m/sec
+                        </li>
+                      </ul>               
                     <img
                       src="images/03d.png"
                       class="card-img-bottom"
@@ -142,15 +149,18 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title">Tuesday</h5>
-                    <p class="card-text">
-                      <span class="temperature">+30°C +27°C</span>
-                      <br />
-                      Precipitation: 0%
-                      <br />
-                      Humidity: 63%
-                      <br />
-                      Wind: 3 m/sec
-                    </p>
+                      <div class="forecast-temperature"><span class="forecast-temperature-max">+30</span>°C <span class="forecast-temperature-min">+26</span>°C</div>
+                    <ul>
+                        <li>
+                          Precipitation: <span class = "forecast-precipitation"></span>%
+                        </li>
+                        <li>
+                          Humidity:<span class = "forecast-humidity"></span>%
+                        </li>
+                        <li>
+                          Wind:<span class = "forecast-wind"></span> m/sec
+                        </li>
+                      </ul>         
                     <img
                       src="images/04d.png"
                       class="card-img-bottom"
@@ -165,15 +175,18 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title">Wednesday</h5>
-                    <p class="card-text">
-                      <span class="temperature">+31°C +27°C</span>
-                      <br />
-                      Precipitation: 0%
-                      <br />
-                      Humidity: 63%
-                      <br />
-                      Wind: 4 m/sec
-                    </p>
+                    <div class="forecast-temperature"><span class="forecast-temperature-max">+30</span>°C <span class="forecast-temperature-min">+26</span>°C</div>
+                      <ul>
+                        <li>
+                          Precipitation: <span class = "forecast-precipitation"></span>%
+                        </li>
+                        <li>
+                          Humidity:<span class = "forecast-humidity"></span>%
+                        </li>
+                        <li>
+                          Wind:<span class = "forecast-wind"></span> m/sec
+                        </li>
+                      </ul>         
                     <img
                       src="images/09d.png"
                       class="card-img-bottom"
@@ -188,20 +201,24 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title">Thursday</h5>
-                    <p class="card-text">
-                      <span class="temperature">+27°C +25°C</span>
-                      <br />
-                      Precipitation: 80%
-                      <br />
-                      Humidity: 81%
-                      <br />
-                      Wind: 4 m/sec
-                    </p>
+                    <div class="forecast-temperature"><span class="forecast-temperature-max">+30</span>°C <span class="forecast-temperature-min">+26</span>°C</div>
+                      <ul>
+                        <li>
+                          Precipitation: <span class = "forecast-precipitation"></span>%
+                        </li>
+                        <li>
+                          Humidity:<span class = "forecast-humidity"></span>%
+                        </li>
+                        <li>
+                          Wind:<span class = "forecast-wind"></span> m/sec
+                        </li>
+                      </ul>  
                     <img
                       src="images/10d.png"
                       class="card-img-bottom"
                       alt="100"
                     />
+                    </div>
                   </div>
                 </div>
               </div>
