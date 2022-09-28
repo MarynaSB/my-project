@@ -172,12 +172,12 @@ function displayForecast(response) {
                     }</span>
                     </li>
                     <li>
-                      Humidity:<span class = "forecast-humidity">${
+                      Humidity: <span class = "forecast-humidity">${
                         forecastDay.humidity
                       }</span>%
                     </li>
                     <li>
-                      Wind:<span class = "forecast-wind">${Math.round(
+                      Wind: <span class = "forecast-wind">${Math.round(
                         forecastDay.wind_speed
                       )}</span> m/sec
                     </li>

@@ -32,6 +32,16 @@ ul {
   transform: translateX(-50%) translateY(-50%);
 }
 
+@media (max-width: 767px) {
+    #videoBG {
+        display: none;
+    }
+    .video-container {
+        background: url("../images/clouds.jpg");
+        background-size: cover;
+    }
+}
+
 .video-container .caption {
   z-index: 1;
   position: relative;
@@ -232,10 +242,18 @@ font-weight: 700;
 
 .forecast-description {
   display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .forecast-description:first-letter {
   text-transform: uppercase;
+}
+
+.forecast-humidity {
+  margin-bottom: 10px;
 }
 
 .coder-link {
