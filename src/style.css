@@ -230,6 +230,14 @@ font-weight: 700;
     font-weight: 600;
 }
 
+.forecast-description {
+  display: inline-block;
+}
+
+.forecast-description:first-letter {
+  text-transform: uppercase;
+}
+
 .coder-link {
   font-family: "Martel", serif;
   font-size: 12px;
