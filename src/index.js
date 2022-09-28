@@ -72,45 +72,9 @@ function displayWeatherCondition(response) {
 
 function getWeatherIcon(response) {
   let iconElement = document.querySelector("#weather-icon");
-  if (response.data.weather[0].icon === "01d") {
-    iconElement.setAttribute("src", `images/01d.png`);
-  } else if (response.data.weather[0].icon === "01n") {
-    iconElement.setAttribute("src", `images/01n.png`);
-  } else if (response.data.weather[0].icon === "02d") {
-    iconElement.setAttribute("src", `images/02d.png`);
-  } else if (response.data.weather[0].icon === "02n") {
-    iconElement.setAttribute("src", `images/02n.png`);
-  } else if (response.data.weather[0].icon === "03d") {
-    iconElement.setAttribute("src", `images/03d.png`);
-  } else if (response.data.weather[0].icon === "03n") {
-    iconElement.setAttribute("src", `images/03n.png`);
-  } else if (response.data.weather[0].icon === "04d") {
-    iconElement.setAttribute("src", `images/04d.png`);
-  } else if (response.data.weather[0].icon === "04n") {
-    iconElement.setAttribute("src", `images/04n.png`);
-  } else if (response.data.weather[0].icon === "09d") {
-    iconElement.setAttribute("src", `images/09d.png`);
-  } else if (response.data.weather[0].icon === "09n") {
-    iconElement.setAttribute("src", `images/09n.png`);
-  } else if (response.data.weather[0].icon === "10d") {
-    iconElement.setAttribute("src", `images/10d.png`);
-  } else if (response.data.weather[0].icon === "10n") {
-    iconElement.setAttribute("src", `images/10n.png`);
-  } else if (response.data.weather[0].icon === "11d") {
-    iconElement.setAttribute("src", `images/11d.png`);
-  } else if (response.data.weather[0].icon === "11n") {
-    iconElement.setAttribute("src", `images/11n.png`);
-  } else if (response.data.weather[0].icon === "13d") {
-    iconElement.setAttribute("src", `images/13d.png`);
-  } else if (response.data.weather[0].icon === "13n") {
-    iconElement.setAttribute("src", `images/13n.png`);
-  } else if (response.data.weather[0].icon === "50d") {
-    iconElement.setAttribute("src", `images/50d.png`);
-  } else if (response.data.weather[0].icon === "50n") {
-    iconElement.setAttribute("src", `images/50n.png`);
-  }
+  iconElement.setAttribute("src", getForecastIcon(response.data.weather[0].icon));
   iconElement.setAttribute("alt", response.data.weather[0].description);
-}
+ }
 
 function getForecast(coordinates) {
   let apiKey = "2513f3c728b1b5ff4f4347e1a6af22b8";
@@ -141,6 +105,7 @@ function searchLocation(position) {
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+  document.querySelector("#input-city").value = "";
 }
 
 function linkClick(event, city) {
@@ -148,6 +113,7 @@ function linkClick(event, city) {
   currentCity = city;
   document.querySelector("#actual-city").innerHTML = currentCity;
   searchCity(currentCity);
+  document.querySelector("#input-city").value = "";
 }
 
 let isFahrenheit = false;
@@ -216,12 +182,12 @@ function displayForecast(response) {
                       )}</span> m/sec
                     </li>
                     </ul> 
-                    <img
-                      src="http://openweathermap.org/img/wn/${
+                    <img id="forecastIcon"
+                      src="${getForecastIcon(
                         forecastDay.weather[0].icon
-                      }@2x.png"
+                      )}"
                       class="card-img-bottom"
-                      alt=" "
+                      alt="${forecastDay.weather[0].description}"
                     />
             </div>
           </div>
@@ -233,6 +199,47 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecastIcon (icon) {
+    if (icon === "01d") {
+    return `images/01d.png`;
+  } if (icon === "01n") {
+    return `images/01n.png`;
+  } if (icon === "02d") {
+    return `images/02d.png`;
+  } if (icon === "02n") {
+    return `images/02n.png`;
+  } if (icon === "03d") {
+    return `images/03d.png`;
+  } if (icon === "03n") {
+    return `images/03n.png`;
+  } if (icon === "04d") {
+    return `images/04d.png`;
+  } if (icon === "04n") {
+    return `images/04n.png`;
+  } if (icon === "09d") {
+    return `images/09d.png`;
+  } if (icon === "09n") {
+    return `images/09n.png`;
+  } if (icon === "10d") {
+    return `images/10d.png`;
+  } if (icon === "10n") {
+    return `images/10n.png`;
+  } if (icon === "11d") {
+    return `images/11d.png`;
+  } if (icon === "11n") {
+    return `images/11n.png`;
+  } if (icon === "13d") {
+    return `images/13d.png`;
+  } if (icon === "13n") {
+    return `images/13n.png`;
+  } if (icon === "50d") {
+    return `images/50d.png`;
+  } if (icon === "50n") {
+    return `images/50n.png`;
+  }
+  return "";
 }
 
 let searchCityForm = document.querySelector("#search-city");
